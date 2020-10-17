@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" [(ngModel)]="cliente.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="cliente.nome" class="form-control" placeholder="Nome">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Senha</label>
+      <input type="password" class="form-control" [(ngModel)]="cliente.senha" name="senha">
+    </div>
+    <button (click)="salvar()" class="btn btn-primary">Submit</button>
+  </div>
+
+  <hr>
+
+  <h1>
+    Id por parametro {{idMostrar}}
+  </h1>
+
+  <hr>
+
+  <div class="table-responsive">
+    <table class="table m-0">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>E-mail</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.id}}</td>
+        <td>{{cliente.nome}}</td>
+        <td><button class="btn btn-sm btn-info" (click)="editar(cliente)" data-toggle="tooltip" data-placement="top" title="Detalhes"><i class="fa fa-eye" aria-hidden="true"></i>Detalhes</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <button (click)="redirectHome()" class="btn btn-primary">Voltar para home</button>
+
+</div>
+
